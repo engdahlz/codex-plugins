@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Secrets and environment files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and temporary files
+*.log
+.tmp/
+tmp/
+
+# Python caches, useful for future validation scripts
+__pycache__/
+*.py[cod]
+.venv/
+
+# Node caches, useful if future tooling is added
+node_modules/
