@@ -32,6 +32,6 @@ Blender MCP may execute Blender Python inside a live Blender session. Save work 
 
 Fusion Desktop MCP and Fusion Python can mutate live CAD documents. Never claim a mutation occurred without runtime evidence. Separate inspection, planning, approval, mutation, saving/exporting, and verification. Avoid arbitrary `execute_python` style workflows when a narrow typed operation or reviewable add-in is possible.
 
-Autodesk Product Help MCP is enabled by default because it is documentation-oriented. Fusion Desktop MCP and Fusion Data MCP are disabled by default because they can affect live desktop state or require Autodesk identity and cloud scopes. Treat loopback reachability as transport only, not server identity.
+Autodesk Product Help MCP and Fusion Desktop MCP are enabled by default for Axel's workflow. Fusion Desktop MCP still uses `prompt` approval and must follow inspect, plan, approve, mutate, and verify. Fusion Data MCP remains disabled by default because it requires Autodesk identity and cloud scopes. Treat loopback reachability as transport only, not server identity.
 
 Fusion Insider artifacts and capability snapshots may contain NDA-only information. Keep them out of public commits and place private local snapshots under `.fusion-private/`, which must stay ignored.

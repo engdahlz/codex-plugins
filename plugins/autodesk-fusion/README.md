@@ -5,7 +5,7 @@ Autodesk Fusion Developer makes Codex behave like a disciplined Fusion API, APS,
 ## Design goals
 
 1. Use official Autodesk/OpenAI/MCP sources before coding.
-2. Use Product Help MCP for documentation and Fusion Desktop MCP only for intentional live desktop work.
+2. Use Product Help MCP for documentation and Fusion Desktop MCP for live desktop work when Fusion is running.
 3. Keep Fusion Data MCP and APS cloud workflows separate from live desktop API workflows.
 4. Treat Fusion Insider as a test channel, not a public baseline.
 5. Use `inspect -> plan -> approve -> mutate -> verify` for all live CAD operations.
@@ -18,7 +18,7 @@ See [`SKILLS.md`](SKILLS.md) for the full skill index.
 ## MCP profiles
 
 - `autodesk-product-help` is enabled by default for Autodesk documentation research.
-- `autodesk-fusion-desktop` is disabled by default and points to `http://127.0.0.1:27182/mcp`.
+- `autodesk-fusion-desktop` is enabled by default and points to `http://127.0.0.1:27182/mcp`; tool approval remains in `prompt` mode.
 - `autodesk-fusion-data` is disabled by default and points to `https://developer.api.autodesk.com/fusion/mcp`.
 
 ## Safe live Fusion workflow
