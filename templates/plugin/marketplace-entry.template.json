@@ -1,0 +1,9 @@
+{
+  "name": "replace-with-plugin-name",
+  "description": "Replace with a short description of the plugin collection and when to install it.",
+  "source": "./",
+  "strict": false,
+  "skills": [
+    "./skills/replace-with-skill-name"
+  ]
+}
