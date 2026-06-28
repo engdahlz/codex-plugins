@@ -1,6 +1,6 @@
 {
   "name": "autodesk-fusion",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Source-linked Codex plugin for Autodesk Fusion API development, Fusion Desktop MCP, Product Help MCP, Fusion Data MCP, APS Automation, Insider compatibility, Electronics read-only analysis, and safe CAD automation workflows.",
   "author": {
     "name": "Axel Engdahl",

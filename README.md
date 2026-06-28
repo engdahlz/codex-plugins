@@ -22,10 +22,11 @@ Blender Pro v0.2.0 includes:
 
 A source-linked Autodesk Fusion workflow plugin for Codex.
 
-Autodesk Fusion Developer v0.2.2 includes:
+Autodesk Fusion Developer v0.2.3 includes:
 
 - Codex plugin manifest at `plugins/autodesk-fusion/.codex-plugin/plugin.json`.
 - Bundled MCP profiles for Autodesk Product Help, Fusion Desktop MCP, and Fusion Data MCP at `plugins/autodesk-fusion/.mcp.json`.
+- Fusion Desktop MCP enabled by default at `http://127.0.0.1:27182/mcp`, with tool approval still in `prompt` mode.
 - Focused skills for Fusion API research, add-in scaffolding, live MCP operations, parametric modeling, APS/MFGDM, Automation API, Insider compatibility, read-only Electronics analysis, testing, and security review.
 - Official-source reference links for Autodesk Fusion API, Fusion MCP, APS, OpenAI Codex plugin/MCP capabilities, and MCP security guidance.
 - Safe workflow rules for `inspect -> plan -> approve -> mutate -> verify`.

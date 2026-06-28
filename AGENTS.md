@@ -33,7 +33,7 @@ The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fus
 - Establish current primary-source evidence before generating Fusion API code.
 - Prefer Autodesk Product Help MCP and exact official URLs for API facts.
 - For live Fusion work, follow `inspect -> plan -> approve -> mutate -> verify`.
-- Keep Fusion Desktop MCP disabled by default until Fusion is running and the user approves live operations.
+- Keep Fusion Desktop MCP enabled by default for Axel's Fusion workflow, but keep its tool approval in `prompt` mode and mutate only after explicit approval.
 - Keep Fusion Data MCP disabled by default until Autodesk OAuth and project scope are intentional.
 - Handle Zero Doc: `activeDocument`, `activeProduct`, and `activeViewport` may be null.
 - Treat Preview APIs and Insider-only features as lab-only unless official public documentation proves release status.

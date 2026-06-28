@@ -10,7 +10,7 @@
     },
     "autodesk-fusion-desktop": {
       "url": "http://127.0.0.1:27182/mcp",
-      "enabled": false,
+      "enabled": true,
       "required": false,
       "startup_timeout_sec": 10,
       "tool_timeout_sec": 180,
