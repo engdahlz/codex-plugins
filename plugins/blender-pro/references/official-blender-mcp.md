@@ -1,6 +1,6 @@
 # Official Blender MCP notes
 
-Primary source requested for this plugin:
+Primary source for this plugin:
 
 ```text
 https://www.blender.org/lab/mcp-server/
@@ -8,9 +8,9 @@ https://www.blender.org/lab/mcp-server/
 
 Use Blender Lab's official MCP server page as the source of truth for installation steps, Blender add-on details, supported Blender versions, and the current MCP server launcher command.
 
-## Current bundled assumption
+## Current bundled default
 
-This plugin ships a standard Codex MCP config at `../.mcp.json` using:
+This plugin ships a Codex MCP config at `../.mcp.json` using:
 
 ```json
 {
@@ -19,20 +19,20 @@ This plugin ships a standard Codex MCP config at `../.mcp.json` using:
 }
 ```
 
-This is a practical default because many Blender MCP setups expose the server through `uvx blender-mcp`. If Blender Lab documents a different package name, command, port, transport, or add-on procedure, update `../.mcp.json` and this reference file before publishing the plugin broadly.
+This is a practical default for Blender MCP setups that expose the server through `uvx blender-mcp`. If Blender Lab documents a different package name, command, port, transport, or add-on procedure, update `../.mcp.json` and this reference file.
 
 ## Verification checklist
 
-Before using this plugin heavily, verify the official page for:
+Before relying on a new Blender MCP release, verify:
 
-- MCP package/launcher command.
+- MCP package or launcher command.
 - Blender add-on installation method.
 - Default port and host.
-- Whether the server uses stdio, HTTP, or another transport.
-- Whether telemetry exists and how to disable it.
-- Whether asset download tools require extra opt-in.
+- Transport type.
+- Telemetry controls.
+- External asset download controls.
 - Supported Blender versions.
-- Known limitations and security warnings.
+- Security warnings and known limitations.
 
 ## Local connection model
 
@@ -41,7 +41,7 @@ Most Blender MCP setups use two local components:
 1. A Blender-side add-on/server running inside Blender.
 2. A Codex-launched MCP process that communicates with that Blender-side component.
 
-Codex talks to the MCP process. The MCP process talks to Blender. If any piece is missing, live scene control will fail.
+Codex talks to the MCP process. The MCP process talks to Blender. If either side is missing, live scene control will fail.
 
 ## Safe default policy
 
@@ -53,4 +53,4 @@ enabled = true
 default_tools_approval_mode = "prompt"
 ```
 
-For large scene edits, save the `.blend` file before running tools that execute Blender Python or delete/replace objects.
+For large scene edits, save the `.blend` file before using tools that execute Blender-side code or change many objects.

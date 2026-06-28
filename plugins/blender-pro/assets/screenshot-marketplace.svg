@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Blender Pro marketplace screenshot">
+  <rect width="960" height="540" rx="28" fill="#111827"/>
+  <rect x="56" y="56" width="848" height="428" rx="22" fill="#1f2937"/>
+  <text x="96" y="118" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Engdahlz Codex Plugins</text>
+  <text x="96" y="158" fill="#d1d5db" font-family="Arial, Helvetica, sans-serif" font-size="18">Personal marketplace for expert Codex workflows</text>
+  <rect x="96" y="202" width="768" height="192" rx="18" fill="#374151"/>
+  <rect x="124" y="230" width="86" height="86" rx="18" fill="#EA7600"/>
+  <circle cx="168" cy="274" r="23" fill="#ffffff"/>
+  <circle cx="168" cy="274" r="11" fill="#3f7fbd"/>
+  <text x="240" y="260" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Blender Pro</text>
+  <text x="240" y="296" fill="#d1d5db" font-family="Arial, Helvetica, sans-serif" font-size="18">Expert Blender workflows with MCP, skills, and references</text>
+  <text x="240" y="330" fill="#fbbf24" font-family="Arial, Helvetica, sans-serif" font-size="16">Design · Read · Write · Run</text>
+  <rect x="720" y="254" width="100" height="44" rx="12" fill="#10a37f"/>
+  <text x="748" y="282" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Install</text>
+</svg>

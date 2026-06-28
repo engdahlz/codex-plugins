@@ -2,7 +2,7 @@
 
 Personal GitHub marketplace for custom Codex plugins.
 
-This repository is a Codex marketplace. Add the repository URL to Codex and install the plugins exposed through `.agents/plugins/marketplace.json`.
+This repository is a Codex marketplace. Add the repository URL to Codex and install plugins exposed through `.agents/plugins/marketplace.json`.
 
 ## Available plugins
 
@@ -10,13 +10,13 @@ This repository is a Codex marketplace. Add the repository URL to Codex and inst
 
 A professional Blender workflow plugin for Codex.
 
-Blender Pro packages:
+Blender Pro v0.2.0 includes:
 
-- A Codex plugin manifest at `plugins/blender-pro/.codex-plugin/plugin.json`.
-- A bundled Blender MCP configuration at `plugins/blender-pro/.mcp.json`.
-- Seven focused Agent Skills for setup, scene work, modeling, materials/lighting, animation/rigging, Python automation, and quality review.
-- Deep reference documentation for professional Blender workflows, safety, MCP setup, and Python patterns.
-- Marketplace metadata so Codex can discover the plugin from this repository.
+- Codex plugin manifest at `plugins/blender-pro/.codex-plugin/plugin.json`.
+- Bundled Blender MCP configuration at `plugins/blender-pro/.mcp.json`.
+- Focused skills for Blender setup, scene work, modeling, materials and lighting, render workflow, animation and rigging, Geometry Nodes, asset pipelines, bpy workflows, and quality review.
+- Reference documentation for Blender MCP setup, safety, professional workflow, modeling, materials, lighting, rendering, asset handoff, and troubleshooting.
+- Marketplace metadata, icon, logo, and SVG screenshots so Codex can present the plugin cleanly.
 
 ## Install this marketplace in Codex
 
@@ -55,28 +55,27 @@ Keep all marketplace manifests synchronized.
 
 ```text
 .
-├── .agents/plugins/marketplace.json     # Canonical Codex repo marketplace
-├── .claude-plugin/marketplace.json      # Legacy-compatible marketplace mirror
-├── .codex-plugin/marketplace.json       # Compatibility mirror
-├── docs/                                # Marketplace notes
+├── .agents/plugins/marketplace.json
+├── .claude-plugin/marketplace.json
+├── .codex-plugin/marketplace.json
+├── docs/
 ├── plugins/
-│   └── blender-pro/                     # First real plugin
-│       ├── .codex-plugin/plugin.json    # Required Codex plugin manifest
-│       ├── .mcp.json                    # Bundled Blender MCP server config
-│       ├── skills/                      # Bundled Agent Skills
-│       ├── references/                  # Documentation loaded on demand
-│       ├── examples/                    # Prompt examples
-│       ├── scripts/                     # Validation tools
-│       └── assets/                      # Plugin icon/logo
-├── templates/                           # Templates only, not active plugins
-├── AGENTS.md                            # AI agent rules for this repository
-└── SECURITY.md                          # Security policy for skills/plugins
+│   └── blender-pro/
+│       ├── .codex-plugin/plugin.json
+│       ├── .mcp.json
+│       ├── skills/
+│       ├── references/
+│       ├── examples/
+│       └── assets/
+├── templates/
+├── AGENTS.md
+└── SECURITY.md
 ```
 
 ## Development rules
 
 - Do not add plugins unless Axel explicitly requests them.
 - Treat skills and MCP configuration as code.
-- Do not commit secrets, personal credentials, API keys, OAuth tokens, or generated auth files.
+- Do not commit secrets, credentials, API keys, OAuth tokens, or generated auth files.
 - Keep plugin manifests and marketplace entries accurate.
-- Keep skills focused and front-load their descriptions so Codex can select the right skill.
+- Keep skills focused and easy for Codex to select.
