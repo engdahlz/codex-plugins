@@ -1,0 +1,44 @@
+---
+name: replace-with-skill-name
+description: Replace with a clear description of what this skill does and when an agent should use it.
+license: Proprietary
+metadata:
+  author: engdahlz
+  version: "0.1.0"
+---
+
+# Replace With Skill Title
+
+## Purpose
+
+Describe the specific workflow this skill teaches the agent to perform.
+
+## When to use
+
+Use this skill when the user asks for...
+
+## Workflow
+
+1. Step one.
+2. Step two.
+3. Step three.
+
+## Inputs
+
+- Input A:
+- Input B:
+
+## Outputs
+
+- Output A:
+- Output B:
+
+## Safety and constraints
+
+- Do not use secrets or credentials.
+- Do not run destructive commands unless explicitly requested and confirmed.
+- Prefer reading referenced files before making assumptions.
+
+## References
+
+Add optional files under `references/` and link them here.
