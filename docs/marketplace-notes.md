@@ -1,54 +1,70 @@
 # Marketplace notes
 
-This repository is prepared to act as a GitHub-hosted marketplace/source for custom Codex-compatible plugins.
+This repository is prepared as a GitHub-hosted marketplace/source for custom Codex plugins.
 
-## What is known
+## Codex marketplace layout
 
-Agent Skills are an open folder-based format. At minimum, a skill is a directory containing `SKILL.md` with YAML frontmatter and Markdown instructions.
+The canonical repo marketplace is:
 
-The widely documented cross-client convention for project/user skills is `.agents/skills/`, while GitHub marketplace examples for plugin collections use `.claude-plugin/marketplace.json` with a top-level `plugins` array.
+```text
+$REPO_ROOT/.agents/plugins/marketplace.json
+```
 
-OpenAI Codex-compatible skills should be kept portable by using the Agent Skills structure and avoiding client-specific assumptions unless the skill explicitly requires them.
+A marketplace is a JSON catalog with one entry per plugin. Each entry points to a plugin folder, usually under `./plugins/<plugin-name>`.
 
-## Marketplace manifest shape
+This repository also keeps compatibility mirrors at:
 
-Current empty manifest:
+```text
+.claude-plugin/marketplace.json
+.codex-plugin/marketplace.json
+marketplace.json
+```
+
+## Current plugin
+
+```text
+plugins/blender-pro/
+```
+
+The Blender Pro plugin includes:
+
+- `.codex-plugin/plugin.json`
+- `.mcp.json`
+- `skills/`
+- `references/`
+- `examples/`
+- `scripts/`
+- `assets/`
+
+## Marketplace entry pattern
 
 ```json
 {
-  "name": "engdahlz-codex-plugins",
-  "owner": {
-    "name": "Axel Engdahl",
-    "url": "https://github.com/engdahlz"
+  "name": "blender-pro",
+  "source": {
+    "source": "local",
+    "path": "./plugins/blender-pro"
   },
-  "metadata": {
-    "description": "Personal marketplace for Axel Engdahl's custom Codex-compatible Agent Skills plugins.",
-    "version": "0.1.0",
-    "status": "empty-marketplace-shell",
-    "agentSkillsSpec": "https://agentskills.io/specification"
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
   },
-  "plugins": []
+  "category": "Design"
 }
 ```
 
-Future plugin entry pattern:
+## Install command
 
-```json
-{
-  "name": "example-plugin",
-  "description": "Short description of the plugin collection and when to install it.",
-  "source": "./",
-  "strict": false,
-  "skills": [
-    "./skills/example-skill"
-  ]
-}
+```bash
+codex plugin marketplace add engdahlz/codex-plugins
 ```
 
-## Why there are three manifest files
+## Maintenance checklist
 
-- `.claude-plugin/marketplace.json` follows the public marketplace pattern used by Agent Skills example repositories.
-- `.codex-plugin/marketplace.json` is a Codex-oriented mirror for clients that may look for Codex-specific metadata.
-- `marketplace.json` is a direct manifest mirror for clients that allow a raw manifest URL.
+After changing a plugin:
 
-If a future Codex release documents one canonical path, prefer that path and keep the others only if they remain useful.
+1. Validate JSON.
+2. Validate every `SKILL.md` frontmatter block.
+3. Check that plugin manifest paths start with `./` and resolve inside the plugin root.
+4. Check that every marketplace mirror has the same plugin list.
+5. Restart Codex or run marketplace upgrade before testing.

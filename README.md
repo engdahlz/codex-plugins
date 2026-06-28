@@ -1,99 +1,82 @@
 # codex-plugins
 
-Personal GitHub marketplace for my custom Codex / Agent Skills plugins.
+Personal GitHub marketplace for custom Codex plugins.
 
-This repository is intentionally set up as an empty marketplace shell. It contains the marketplace metadata, documentation, safety rules, and templates needed to add plugins later, but it does **not** contain any active plugins yet.
+This repository is a Codex marketplace. Add the repository URL to Codex and install the plugins exposed through `.agents/plugins/marketplace.json`.
 
-## What this repo is for
+## Available plugins
 
-- Keep all custom Codex-compatible skills/plugins in one version-controlled place.
-- Add this repository URL to Codex or another compatible agent client as a marketplace/source.
-- Add future plugins as self-contained folders with clear instructions, resources, and optional scripts.
-- Keep marketplace metadata in sync so one URL can expose all custom plugins.
+### Blender Pro
 
-## Current status
+A professional Blender workflow plugin for Codex.
 
-No plugins are published yet.
+Blender Pro packages:
 
-The marketplace files currently have an empty `plugins` array on purpose:
+- A Codex plugin manifest at `plugins/blender-pro/.codex-plugin/plugin.json`.
+- A bundled Blender MCP configuration at `plugins/blender-pro/.mcp.json`.
+- Seven focused Agent Skills for setup, scene work, modeling, materials/lighting, animation/rigging, Python automation, and quality review.
+- Deep reference documentation for professional Blender workflows, safety, MCP setup, and Python patterns.
+- Marketplace metadata so Codex can discover the plugin from this repository.
 
-```json
-"plugins": []
+## Install this marketplace in Codex
+
+```bash
+codex plugin marketplace add engdahlz/codex-plugins
+codex plugin marketplace list
 ```
 
-## Standards used
+Then restart Codex, open the plugin directory, choose **Engdahlz Codex Plugins**, and install **Blender Pro**.
 
-This repo is prepared around the Agent Skills format:
+Pinned version example:
 
-- A skill is a folder containing a required `SKILL.md` file.
-- `SKILL.md` starts with YAML frontmatter, at minimum `name` and `description`.
-- Skills may also include optional `scripts/`, `references/`, and `assets/` folders.
+```bash
+codex plugin marketplace add engdahlz/codex-plugins --ref main
+```
 
-Marketplace compatibility files are included at:
+## Canonical marketplace files
 
-- `.claude-plugin/marketplace.json` — known GitHub plugin marketplace layout used by Agent Skills examples.
-- `.codex-plugin/marketplace.json` — compatibility mirror for Codex-oriented clients if they look for a Codex-specific marketplace folder.
-- `marketplace.json` — root-level convenience mirror for clients that accept a direct marketplace manifest.
-
-Keep these three files synchronized when adding or removing plugins.
-
-## Intended marketplace URL
-
-Use the repository URL when Codex asks for a marketplace/source URL:
+Codex reads repo marketplaces from:
 
 ```text
-https://github.com/engdahlz/codex-plugins
+.agents/plugins/marketplace.json
 ```
 
-For clients that use repository shorthand, use:
+This repo also keeps compatibility mirrors at:
 
 ```text
-engdahlz/codex-plugins
+.claude-plugin/marketplace.json
+.codex-plugin/marketplace.json
+marketplace.json
 ```
 
-For clients with a slash-command marketplace flow, the equivalent pattern is usually:
-
-```text
-/plugin marketplace add engdahlz/codex-plugins
-```
+Keep all marketplace manifests synchronized.
 
 ## Repository structure
 
 ```text
 .
-├── .claude-plugin/marketplace.json     # Marketplace manifest used by current Agent Skills examples
-├── .codex-plugin/marketplace.json      # Codex-oriented compatibility mirror
-├── docs/                               # Notes and operating rules
-├── skills/                             # Future skill/plugin folders go here
-├── templates/                          # Safe templates, not active plugins
-├── AGENTS.md                           # Instructions for AI coding agents working in this repo
-├── SECURITY.md                         # Safety rules for reviewing plugins
-└── marketplace.json                    # Root-level manifest mirror
+├── .agents/plugins/marketplace.json     # Canonical Codex repo marketplace
+├── .claude-plugin/marketplace.json      # Legacy-compatible marketplace mirror
+├── .codex-plugin/marketplace.json       # Compatibility mirror
+├── docs/                                # Marketplace notes
+├── plugins/
+│   └── blender-pro/                     # First real plugin
+│       ├── .codex-plugin/plugin.json    # Required Codex plugin manifest
+│       ├── .mcp.json                    # Bundled Blender MCP server config
+│       ├── skills/                      # Bundled Agent Skills
+│       ├── references/                  # Documentation loaded on demand
+│       ├── examples/                    # Prompt examples
+│       ├── scripts/                     # Validation tools
+│       └── assets/                      # Plugin icon/logo
+├── templates/                           # Templates only, not active plugins
+├── AGENTS.md                            # AI agent rules for this repository
+└── SECURITY.md                          # Security policy for skills/plugins
 ```
 
-## Adding a plugin later
+## Development rules
 
-Do not add plugins casually. When I ask for one, follow this flow:
-
-1. Create a new folder under `skills/<plugin-name>/`.
-2. Add `skills/<plugin-name>/SKILL.md` with valid YAML frontmatter.
-3. Add optional `scripts/`, `references/`, or `assets/` only if needed.
-4. Add a plugin entry to all marketplace manifests.
-5. Validate the skill and check for unsafe instructions or hidden behavior.
-6. Commit the change with a clear message.
-
-## Naming rules for skills
-
-Use lowercase letters, numbers, and hyphens only:
-
-```text
-good: fusion-cad-review
-bad: Fusion_CAD_Review
-bad: fusion--cad
-```
-
-The folder name must match the `name` field in `SKILL.md`.
-
-## Important safety rule
-
-Skills are executable/contextual instructions for agents. Treat them like code. Do not add secrets, credentials, tokens, personal data, hidden commands, or instructions that try to override user/developer/system permissions.
+- Do not add plugins unless Axel explicitly requests them.
+- Treat skills and MCP configuration as code.
+- Do not commit secrets, personal credentials, API keys, OAuth tokens, or generated auth files.
+- Keep plugin manifests and marketplace entries accurate.
+- Keep skills focused and front-load their descriptions so Codex can select the right skill.

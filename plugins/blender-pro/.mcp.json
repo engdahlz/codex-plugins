@@ -1,0 +1,17 @@
+{
+  "mcp_servers": {
+    "blender": {
+      "command": "uvx",
+      "args": ["--python", "3.11", "blender-mcp"],
+      "env": {
+        "UV_PYTHON_PREFERENCE": "only-managed",
+        "DISABLE_TELEMETRY": "true",
+        "BLENDER_HOST": "localhost",
+        "BLENDER_PORT": "9876"
+      },
+      "startup_timeout_sec": 45,
+      "tool_timeout_sec": 300,
+      "default_tools_approval_mode": "prompt"
+    }
+  }
+}
