@@ -3,7 +3,7 @@
   "interface": {
     "displayName": "Engdahlz Codex Plugins",
     "shortDescription": "Personal Codex plugin marketplace for custom expert workflows.",
-    "longDescription": "A curated personal marketplace of custom Codex plugins. The first plugin is Blender Pro, a professional Blender workflow package with skills, MCP configuration, references, and safety documentation."
+    "longDescription": "A curated personal marketplace of custom Codex plugins. Includes Blender Pro for Blender workflows and Autodesk Fusion Developer for Fusion API, MCP, APS, Insider compatibility, and CAD automation workflows."
   },
   "plugins": [
     {
@@ -17,6 +17,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Design"
+    },
+    {
+      "name": "autodesk-fusion",
+      "source": {
+        "source": "local",
+        "path": "./plugins/autodesk-fusion"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

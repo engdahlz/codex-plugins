@@ -24,6 +24,22 @@ The `blender-pro` plugin is intended to make Codex excellent at Blender workflow
 - Do not add lifecycle hooks unless Axel explicitly requests them; hooks require extra trust review.
 - Keep official Blender MCP setup notes and local command assumptions clearly documented.
 
+## Autodesk Fusion Developer rules
+
+The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows. Preserve these design principles:
+
+- Treat Fusion Insider as a separate test channel, not a new public baseline.
+- Keep public API support, runtime capability detection, and distribution safety separate.
+- Establish current primary-source evidence before generating Fusion API code.
+- Prefer Autodesk Product Help MCP and exact official URLs for API facts.
+- For live Fusion work, follow `inspect -> plan -> approve -> mutate -> verify`.
+- Keep Fusion Desktop MCP disabled by default until Fusion is running and the user approves live operations.
+- Keep Fusion Data MCP disabled by default until Autodesk OAuth and project scope are intentional.
+- Handle Zero Doc: `activeDocument`, `activeProduct`, and `activeViewport` may be null.
+- Treat Preview APIs and Insider-only features as lab-only unless official public documentation proves release status.
+- Do not commit Autodesk tokens, customer CAD files, NC outputs, screenshots containing proprietary content, local Fusion caches, or `.fusion-private/` artifacts.
+- Fusion Electronics API workflows are read-only unless a current official public reference proves a mutating API.
+
 ## When adding a future plugin
 
 1. Create `plugins/<plugin-name>/.codex-plugin/plugin.json`.
@@ -38,5 +54,6 @@ The `blender-pro` plugin is intended to make Codex excellent at Blender workflow
 Use clear commit messages, for example:
 
 - `feat: add blender-pro codex plugin`
-- `docs: expand blender mcp setup notes`
+- `feat: add autodesk-fusion codex plugin`
+- `docs: expand fusion mcp setup notes`
 - `chore: sync marketplace manifests`

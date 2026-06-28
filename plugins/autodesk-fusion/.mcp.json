@@ -1,0 +1,28 @@
+{
+  "mcp_servers": {
+    "autodesk-product-help": {
+      "url": "https://developer.api.autodesk.com/knowledge/public/v1/mcp",
+      "enabled": true,
+      "required": false,
+      "startup_timeout_sec": 20,
+      "tool_timeout_sec": 90,
+      "default_tools_approval_mode": "approve"
+    },
+    "autodesk-fusion-desktop": {
+      "url": "http://127.0.0.1:27182/mcp",
+      "enabled": false,
+      "required": false,
+      "startup_timeout_sec": 10,
+      "tool_timeout_sec": 180,
+      "default_tools_approval_mode": "prompt"
+    },
+    "autodesk-fusion-data": {
+      "url": "https://developer.api.autodesk.com/fusion/mcp",
+      "enabled": false,
+      "required": false,
+      "startup_timeout_sec": 30,
+      "tool_timeout_sec": 180,
+      "default_tools_approval_mode": "prompt"
+    }
+  }
+}

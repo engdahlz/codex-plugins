@@ -18,6 +18,18 @@ Blender Pro v0.2.0 includes:
 - Reference documentation for Blender MCP setup, safety, professional workflow, modeling, materials, lighting, rendering, asset handoff, and troubleshooting.
 - Marketplace metadata, icon, logo, and SVG screenshots so Codex can present the plugin cleanly.
 
+### Autodesk Fusion Developer
+
+A source-linked Autodesk Fusion workflow plugin for Codex.
+
+Autodesk Fusion Developer v0.2.2 includes:
+
+- Codex plugin manifest at `plugins/autodesk-fusion/.codex-plugin/plugin.json`.
+- Bundled MCP profiles for Autodesk Product Help, Fusion Desktop MCP, and Fusion Data MCP at `plugins/autodesk-fusion/.mcp.json`.
+- Focused skills for Fusion API research, add-in scaffolding, live MCP operations, parametric modeling, APS/MFGDM, Automation API, Insider compatibility, read-only Electronics analysis, testing, and security review.
+- Official-source reference links for Autodesk Fusion API, Fusion MCP, APS, OpenAI Codex plugin/MCP capabilities, and MCP security guidance.
+- Safe workflow rules for `inspect -> plan -> approve -> mutate -> verify`.
+
 ## Install this marketplace in Codex
 
 ```bash
@@ -25,12 +37,18 @@ codex plugin marketplace add engdahlz/codex-plugins
 codex plugin marketplace list
 ```
 
-Then restart Codex, open the plugin directory, choose **Engdahlz Codex Plugins**, and install **Blender Pro**.
+Then restart Codex, open the plugin directory, choose **Engdahlz Codex Plugins**, and install **Blender Pro** or **Autodesk Fusion Developer**.
 
 Pinned version example:
 
 ```bash
 codex plugin marketplace add engdahlz/codex-plugins --ref main
+```
+
+Install Fusion directly after adding the marketplace:
+
+```bash
+codex plugin add autodesk-fusion@engdahlz-codex-plugins
 ```
 
 ## Canonical marketplace files
@@ -60,12 +78,14 @@ Keep all marketplace manifests synchronized.
 ├── .codex-plugin/marketplace.json
 ├── docs/
 ├── plugins/
-│   └── blender-pro/
+│   ├── blender-pro/
+│   └── autodesk-fusion/
 │       ├── .codex-plugin/plugin.json
 │       ├── .mcp.json
 │       ├── skills/
 │       ├── references/
 │       ├── examples/
+│       ├── scripts/
 │       └── assets/
 ├── templates/
 ├── AGENTS.md
@@ -76,6 +96,6 @@ Keep all marketplace manifests synchronized.
 
 - Do not add plugins unless Axel explicitly requests them.
 - Treat skills and MCP configuration as code.
-- Do not commit secrets, credentials, API keys, OAuth tokens, or generated auth files.
+- Do not commit secrets, credentials, API keys, OAuth tokens, Autodesk tokens, private design files, `.env` files, or generated auth files.
 - Keep plugin manifests and marketplace entries accurate.
 - Keep skills focused and easy for Codex to select.
