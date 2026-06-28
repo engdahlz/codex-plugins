@@ -1,0 +1,33 @@
+{
+  "name": "blender-pro",
+  "version": "0.1.0",
+  "description": "Professional Blender workflow plugin for Codex. Bundles expert skills, references, and MCP configuration for scene creation, procedural modeling, materials, lighting, rendering, animation, rigging, Python automation, and quality review.",
+  "author": {
+    "name": "Axel Engdahl",
+    "url": "https://github.com/engdahlz"
+  },
+  "homepage": "https://github.com/engdahlz/codex-plugins/tree/main/plugins/blender-pro",
+  "repository": "https://github.com/engdahlz/codex-plugins",
+  "license": "Proprietary",
+  "keywords": ["blender", "3d", "modeling", "mcp", "materials", "lighting", "rendering", "animation", "rigging", "bpy", "python", "procedural-modeling"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Blender Pro",
+    "shortDescription": "Expert Blender workflows with MCP.",
+    "longDescription": "Use Codex as a professional Blender assistant for scene creation, procedural modeling, materials, lighting, rendering, animation, rigging, Python automation, troubleshooting, and final quality review. Includes a bundled Blender MCP configuration and extensive skills/references for disciplined Blender work.",
+    "developerName": "Axel Engdahl",
+    "category": "Design",
+    "capabilities": ["Read", "Write", "Run"],
+    "websiteURL": "https://github.com/engdahlz/codex-plugins",
+    "defaultPrompt": [
+      "Use Blender Pro to connect to my current Blender scene, inspect it, and propose a professional improvement plan before changing anything.",
+      "Use Blender Pro to build a clean, named, organized Blender scene with materials, lighting, camera, and render settings.",
+      "Use Blender Pro to write safe Blender Python that creates or modifies the scene in small reversible steps and verifies the result.",
+      "Use Blender Pro to review my scene for scale, topology, naming, lighting, camera composition, render readiness, and cleanup."
+    ],
+    "brandColor": "#EA7600",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

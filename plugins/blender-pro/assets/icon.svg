@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Blender Pro icon">
+  <rect width="64" height="64" rx="14" fill="#EA7600"/>
+  <circle cx="34" cy="34" r="14" fill="#ffffff" opacity="0.96"/>
+  <circle cx="34" cy="34" r="7" fill="#3f7fbd"/>
+  <path d="M13 28h24c6 0 11 5 11 11" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  <path d="M19 17l20 11" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+</svg>

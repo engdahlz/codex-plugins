@@ -1,14 +1,13 @@
 {
   "name": "engdahlz-codex-plugins",
-  "owner": {
-    "name": "Axel Engdahl",
-    "url": "https://github.com/engdahlz"
-  },
-  "metadata": {
-    "description": "Personal marketplace for Axel Engdahl's custom Codex-compatible Agent Skills plugins.",
-    "version": "0.1.0",
-    "status": "empty-marketplace-shell",
-    "agentSkillsSpec": "https://agentskills.io/specification"
-  },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "blender-pro",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blender-pro"
+      },
+      "category": "Design"
+    }
+  ]
 }

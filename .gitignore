@@ -14,10 +14,17 @@
 .tmp/
 tmp/
 
-# Python caches, useful for future validation scripts
+# Python caches
 __pycache__/
 *.py[cod]
 .venv/
 
-# Node caches, useful if future tooling is added
+# Node caches
 node_modules/
+
+# Blender temporary/backups
+*.blend1
+*.blend2
+*.blend3
+*.blend@
+*.crash.txt
