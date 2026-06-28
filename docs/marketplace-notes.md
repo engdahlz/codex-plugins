@@ -20,36 +20,31 @@ This repository also keeps compatibility mirrors at:
 marketplace.json
 ```
 
-## Current plugin
+## Current plugins
 
 ```text
 plugins/blender-pro/
+plugins/autodesk-fusion/
 ```
 
-The Blender Pro plugin includes:
+The Blender Pro plugin includes `.codex-plugin/plugin.json`, `.mcp.json`, `skills/`, `references/`, `examples/`, `scripts/`, and `assets/`.
 
-- `.codex-plugin/plugin.json`
-- `.mcp.json`
-- `skills/`
-- `references/`
-- `examples/`
-- `scripts/`
-- `assets/`
+The Autodesk Fusion Developer plugin includes `.codex-plugin/plugin.json`, `.mcp.json`, `skills/`, `references/`, `examples/`, `scripts/`, and `assets/`.
 
 ## Marketplace entry pattern
 
 ```json
 {
-  "name": "blender-pro",
+  "name": "autodesk-fusion",
   "source": {
     "source": "local",
-    "path": "./plugins/blender-pro"
+    "path": "./plugins/autodesk-fusion"
   },
   "policy": {
     "installation": "AVAILABLE",
     "authentication": "ON_INSTALL"
   },
-  "category": "Design"
+  "category": "Productivity"
 }
 ```
 
@@ -57,6 +52,7 @@ The Blender Pro plugin includes:
 
 ```bash
 codex plugin marketplace add engdahlz/codex-plugins
+codex plugin add autodesk-fusion@engdahlz-codex-plugins
 ```
 
 ## Maintenance checklist

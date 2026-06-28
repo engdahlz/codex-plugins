@@ -1,0 +1,48 @@
+{
+  "name": "autodesk-fusion",
+  "version": "0.2.2",
+  "description": "Source-linked Codex plugin for Autodesk Fusion API development, Fusion Desktop MCP, Product Help MCP, Fusion Data MCP, APS Automation, Insider compatibility, Electronics read-only analysis, and safe CAD automation workflows.",
+  "author": {
+    "name": "Axel Engdahl",
+    "url": "https://github.com/engdahlz"
+  },
+  "homepage": "https://github.com/engdahlz/codex-plugins/tree/main/plugins/autodesk-fusion",
+  "repository": "https://github.com/engdahlz/codex-plugins",
+  "license": "Proprietary",
+  "keywords": [
+    "autodesk",
+    "fusion",
+    "cad",
+    "cam",
+    "mcp",
+    "aps",
+    "python",
+    "addin",
+    "automation",
+    "mfgdm",
+    "pmi",
+    "insider",
+    "electronics"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Autodesk Fusion Developer",
+    "shortDescription": "Build, inspect, automate, and verify Autodesk Fusion integrations.",
+    "longDescription": "Use Codex as a disciplined Autodesk Fusion developer for Python add-ins, Fusion API research, live Desktop MCP inspection, safe model mutation plans, APS/MFGDM cloud workflows, Automation API jobs, Fusion Insider compatibility, read-only Electronics analysis, and verification-first CAD automation.",
+    "developerName": "Axel Engdahl",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Run"],
+    "websiteURL": "https://github.com/engdahlz/codex-plugins",
+    "defaultPrompt": [
+      "Use Autodesk Fusion Developer to research the current official Fusion API, cite exact sources, and scaffold a safe Python add-in.",
+      "Use Autodesk Fusion Developer to inspect the active Fusion design through MCP, create a mutation plan, ask for approval, then verify the result.",
+      "Use Autodesk Fusion Developer to review this Fusion integration for Zero Doc handling, units, event lifecycle, assembly context, preview APIs, and destructive side effects.",
+      "Use Autodesk Fusion Developer to compare public Fusion and Fusion Insider capability snapshots without exposing NDA material."
+    ],
+    "brandColor": "#2D6B9F",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg",
+    "screenshots": ["./assets/screenshot-marketplace.svg"]
+  }
+}
