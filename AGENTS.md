@@ -26,7 +26,7 @@ The `blender-pro` plugin is intended to make Codex excellent at Blender workflow
 
 ## Autodesk Fusion Developer rules
 
-The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows with minimal user interruption. Preserve these design principles:
+The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows with minimal user interruption and strong evidence capture. Preserve these design principles:
 
 - Treat Fusion Insider as a separate test channel, not a new public baseline.
 - Keep public API support, runtime capability detection, and distribution safety separate.
@@ -34,13 +34,16 @@ The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fus
 - Prefer Autodesk Product Help MCP and exact official URLs for API facts.
 - Keep Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP enabled by default.
 - Keep bundled Fusion MCP tool approval in `approve` mode where supported.
+- Run `fusion_doctor.py` before live Fusion work when practical.
+- Record an evidence ledger for long or mutating autonomous runs.
+- Use the local Fusion API reference RAG scripts before writing symbol-sensitive API code.
 - Treat Axel's current task as authorization for ordinary reads, writes, model edits, code changes, and verification inside the stated scope.
 - Do not ask repeated confirmation questions for routine subtasks that are already implied by Axel's request.
-- Still honor platform, OS, Autodesk OAuth, and Codex security prompts when they are unavoidable.
+- Still honor platform, OS, Autodesk OAuth, GitHub, and Codex security prompts when they are unavoidable.
 - Pause only when the target is ambiguous, credentials are required, a platform approval is unavoidable, or the requested action is outside the stated task scope.
 - Handle Zero Doc: `activeDocument`, `activeProduct`, and `activeViewport` may be null.
 - Treat Preview APIs and Insider-only features as lab-only unless official public documentation proves release status.
-- Do not commit Autodesk tokens, customer CAD files, NC outputs, screenshots containing proprietary content, local Fusion caches, or `.fusion-private/` artifacts.
+- Do not commit Autodesk tokens, customer CAD files, NC outputs, screenshots containing proprietary content, local Fusion caches, `.fusion-runs/`, `.fusion-api-reference/`, or `.fusion-private/` artifacts.
 - Fusion Electronics API workflows are read-only unless a current official public reference proves a mutating API.
 
 ## When adding a future plugin
