@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.4
+
+- Enabled Autodesk Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP by default.
+- Set bundled MCP tool approval to `approve` where supported so Codex can work with fewer confirmation prompts.
+- Updated runtime, live MCP, security, CAM, and document-lifecycle skills for high-autonomy operation inside the user's stated task scope.
+- Updated README, plugin manifest, agent rules, security notes, and runtime protocol to match the high-autonomy default.
+
 ## 0.2.3
 
 - Enabled Autodesk Fusion Desktop MCP by default at `http://127.0.0.1:27182/mcp`.

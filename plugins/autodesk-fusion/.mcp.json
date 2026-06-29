@@ -14,15 +14,15 @@
       "required": false,
       "startup_timeout_sec": 10,
       "tool_timeout_sec": 180,
-      "default_tools_approval_mode": "prompt"
+      "default_tools_approval_mode": "approve"
     },
     "autodesk-fusion-data": {
       "url": "https://developer.api.autodesk.com/fusion/mcp",
-      "enabled": false,
+      "enabled": true,
       "required": false,
       "startup_timeout_sec": 30,
       "tool_timeout_sec": 180,
-      "default_tools_approval_mode": "prompt"
+      "default_tools_approval_mode": "approve"
     }
   }
 }

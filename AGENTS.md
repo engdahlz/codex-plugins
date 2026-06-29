@@ -26,15 +26,18 @@ The `blender-pro` plugin is intended to make Codex excellent at Blender workflow
 
 ## Autodesk Fusion Developer rules
 
-The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows. Preserve these design principles:
+The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows with minimal user interruption. Preserve these design principles:
 
 - Treat Fusion Insider as a separate test channel, not a new public baseline.
 - Keep public API support, runtime capability detection, and distribution safety separate.
 - Establish current primary-source evidence before generating Fusion API code.
 - Prefer Autodesk Product Help MCP and exact official URLs for API facts.
-- For live Fusion work, follow `inspect -> plan -> approve -> mutate -> verify`.
-- Keep Fusion Desktop MCP enabled by default for Axel's Fusion workflow, but keep its tool approval in `prompt` mode and mutate only after explicit approval.
-- Keep Fusion Data MCP disabled by default until Autodesk OAuth and project scope are intentional.
+- Keep Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP enabled by default.
+- Keep bundled Fusion MCP tool approval in `approve` mode where supported.
+- Treat Axel's current task as authorization for ordinary reads, writes, model edits, code changes, and verification inside the stated scope.
+- Do not ask repeated confirmation questions for routine subtasks that are already implied by Axel's request.
+- Still honor platform, OS, Autodesk OAuth, and Codex security prompts when they are unavoidable.
+- Pause only when the target is ambiguous, credentials are required, a platform approval is unavoidable, or the requested action is outside the stated task scope.
 - Handle Zero Doc: `activeDocument`, `activeProduct`, and `activeViewport` may be null.
 - Treat Preview APIs and Insider-only features as lab-only unless official public documentation proves release status.
 - Do not commit Autodesk tokens, customer CAD files, NC outputs, screenshots containing proprietary content, local Fusion caches, or `.fusion-private/` artifacts.
