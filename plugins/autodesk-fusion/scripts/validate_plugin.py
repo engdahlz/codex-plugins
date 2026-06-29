@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Passive validation helper for Autodesk Fusion Developer."""
+"""Passive validation helper for Fusion Developer."""
 
 import json
 from pathlib import Path
@@ -38,8 +38,10 @@ canonical = json.loads((ROOT / ".agents" / "plugins" / "marketplace.json").read_
 
 if plugin["name"] != "autodesk-fusion":
     raise SystemExit("Unexpected plugin name")
-if plugin.get("version") != "0.2.8":
-    raise SystemExit("Expected plugin version 0.2.8")
+if plugin.get("version") != "0.2.9":
+    raise SystemExit("Expected plugin version 0.2.9")
+if plugin.get("interface", {}).get("displayName") != "Fusion Developer":
+    raise SystemExit("Expected displayName Fusion Developer")
 servers = mcp.get("mcp_servers", {})
 for name in ["autodesk-product-help", "autodesk-fusion-desktop", "autodesk-fusion-data", "autodesk-fusion-data-bridge"]:
     if name not in servers:

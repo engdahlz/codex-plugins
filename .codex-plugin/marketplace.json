@@ -3,7 +3,7 @@
   "interface": {
     "displayName": "Engdahlz Codex Plugins",
     "shortDescription": "Personal Codex plugin marketplace for custom expert workflows.",
-    "longDescription": "A curated personal marketplace of custom Codex plugins. Includes Blender Pro for Blender workflows and Autodesk Fusion Developer for Fusion API, MCP, APS, Insider compatibility, and CAD automation workflows."
+    "longDescription": "A curated personal marketplace of custom Codex plugins. Includes Blender Pro for Blender workflows and Fusion Developer for Fusion API, MCP, APS, Insider compatibility, and CAD automation workflows."
   },
   "plugins": [
     {

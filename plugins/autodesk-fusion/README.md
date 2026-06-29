@@ -1,6 +1,6 @@
-# Autodesk Fusion Developer Codex Plugin
+# Fusion Developer Codex Plugin
 
-Autodesk Fusion Developer makes Codex behave like a high-autonomy, evidence-driven Fusion API, APS, MCP, and CAD automation assistant.
+Fusion Developer makes Codex behave like a high-autonomy, evidence-driven Fusion API, APS, MCP, and CAD automation assistant.
 
 ## v0.2.6 highlights
 

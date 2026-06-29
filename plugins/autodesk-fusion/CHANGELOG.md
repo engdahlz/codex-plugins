@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.9
+
+- Renamed the plugin display name from `Autodesk Fusion Developer` to `Fusion Developer`.
+
 ## 0.2.8
 
 - Replaced Autodesk Fusion Developer PNG logo and icon variants with the updated Fusion + Codex arrow artwork.
