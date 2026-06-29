@@ -38,8 +38,8 @@ canonical = json.loads((ROOT / ".agents" / "plugins" / "marketplace.json").read_
 
 if plugin["name"] != "autodesk-fusion":
     raise SystemExit("Unexpected plugin name")
-if plugin.get("version") != "0.2.7":
-    raise SystemExit("Expected plugin version 0.2.7")
+if plugin.get("version") != "0.2.8":
+    raise SystemExit("Expected plugin version 0.2.8")
 servers = mcp.get("mcp_servers", {})
 for name in ["autodesk-product-help", "autodesk-fusion-desktop", "autodesk-fusion-data", "autodesk-fusion-data-bridge"]:
     if name not in servers:

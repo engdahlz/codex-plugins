@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.8
+
+- Replaced Autodesk Fusion Developer PNG logo and icon variants with the updated Fusion + Codex arrow artwork.
+
 ## 0.2.7
 
 - Updated Autodesk Fusion Developer plugin visuals to use the new Fusion + Codex arrow PNG icon set.
