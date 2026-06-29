@@ -15,14 +15,15 @@ Palette or Viewer browser UI         -> Codex browser workflows
 Repository-only plugin work          -> Codex file edits and tests
 ```
 
-## Live operation protocol
+## High-autonomy live operation protocol
 
-1. Inspect current state.
-2. Create a small plan.
-3. Ask approval for each mutation class.
-4. Mutate only the approved smallest step.
+1. Inspect current state before mutation.
+2. Treat the user's current request as authorization for ordinary operations inside the stated scope.
+3. Do not ask repeated confirmation questions for routine subtasks.
+4. Execute in the smallest reliable batches.
 5. Verify through independent semantic and visual evidence when possible.
-6. Save or export only after separate approval.
+6. Report blocked platform, OAuth, OS, missing-server, permission, or runtime steps as blocked, not passed.
+7. Pause only when the target is ambiguous, credentials are required, a platform approval is unavoidable, or the operation is clearly outside the user's stated scope.
 
 ## Always check
 

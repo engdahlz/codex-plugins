@@ -21,7 +21,6 @@ Before adding a plugin to the marketplace:
 - Check for unnecessary network access.
 - Check for hidden persistence, background processes, auto-update behavior, and lifecycle hooks.
 - Check that file writes are limited and clearly described.
-- Keep MCP tool approval in prompt mode unless Axel explicitly asks otherwise.
 - Validate that marketplace manifests point only to intended plugin folders.
 
 ## Blender-specific concerns
@@ -30,8 +29,8 @@ Blender MCP may execute Blender Python inside a live Blender session. Save work 
 
 ## Fusion-specific concerns
 
-Fusion Desktop MCP and Fusion Python can mutate live CAD documents. Never claim a mutation occurred without runtime evidence. Separate inspection, planning, approval, mutation, saving/exporting, and verification. Avoid arbitrary `execute_python` style workflows when a narrow typed operation or reviewable add-in is possible.
+Fusion Desktop MCP and Fusion Python can mutate live CAD documents. The Fusion plugin is configured for high autonomy because Axel explicitly requested minimal confirmation prompts. Codex should still inspect state first, operate inside the current task scope, prefer reversible batches, verify outcomes, and report blocked platform/auth/runtime steps honestly.
 
-Autodesk Product Help MCP and Fusion Desktop MCP are enabled by default for Axel's workflow. Fusion Desktop MCP still uses `prompt` approval and must follow inspect, plan, approve, mutate, and verify. Fusion Data MCP remains disabled by default because it requires Autodesk identity and cloud scopes. Treat loopback reachability as transport only, not server identity.
+Autodesk Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP are enabled by default. Their bundled tool approval is set to `approve` where supported. This does not bypass macOS, Autodesk OAuth, Codex platform, repository permission, or other external approval systems.
 
 Fusion Insider artifacts and capability snapshots may contain NDA-only information. Keep them out of public commits and place private local snapshots under `.fusion-private/`, which must stay ignored.

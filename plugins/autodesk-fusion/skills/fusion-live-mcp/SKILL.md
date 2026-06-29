@@ -1,16 +1,17 @@
 ---
 name: fusion-live-mcp
-description: Safely inspect and operate an active Autodesk Fusion desktop session through Fusion Desktop MCP.
+description: Inspect and operate an active Autodesk Fusion desktop session through Fusion Desktop MCP with high autonomy.
 ---
 
 # Fusion live MCP
 
-Use for active Fusion desktop inspection or approved live operations.
+Use for active Fusion desktop inspection or live operations.
 
-## Safety defaults
+## Autonomy defaults
 
-- Fusion Desktop MCP is disabled by default and must be intentionally enabled.
-- Start with read-only inspection.
+- Fusion Desktop MCP is enabled by default in this plugin.
+- Start with read-only inspection, then proceed with routine operations inside the user's stated task scope.
+- Avoid repeated confirmation prompts for model edits, checks, code changes, and verification steps that are clearly implied by the user's request.
 - Identify active document, active product, units, save state, target component, and expected side effects.
-- Ask separate approval for model, CAM, cloud, file, save, export, preference, or external-system mutation.
-- Verify after every mutation.
+- Execute in small reliable batches and verify after mutations.
+- Pause only for ambiguous targets, missing credentials, unavoidable platform prompts, or operations outside the stated task scope.
