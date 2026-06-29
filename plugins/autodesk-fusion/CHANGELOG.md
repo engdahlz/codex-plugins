@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.5
+
+- Added Fusion runtime doctor script and skill.
+- Added evidence ledger script, reference, and skill for autonomous run audit trails.
+- Added Fusion API Reference RAG helper scripts and reference documentation.
+- Added Computer Use guide and skill for Fusion GUI workflows.
+- Added high-autonomy Codex configuration guide.
+- Added optional hook examples for session start, pre-MCP logging, and stop checks.
+- Added Codex subagent prompt files for API research, implementation, runtime verification, release audit, and Insider regression checks.
+- Added 2026-focused skills for Python 3.14, Design Intent, BOM/properties, assembly references, source watching, local workflow MCP, and large assembly performance.
+- Updated README, AGENTS, SECURITY, SKILLS index, validation helper, and plugin manifest.
+
 ## 0.2.4
 
 - Enabled Autodesk Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP by default.

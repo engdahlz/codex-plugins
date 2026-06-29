@@ -20,17 +20,18 @@ Blender Pro v0.2.0 includes:
 
 ### Autodesk Fusion Developer
 
-A high-autonomy Autodesk Fusion workflow plugin for Codex.
+A high-autonomy, evidence-driven Autodesk Fusion workflow plugin for Codex.
 
-Autodesk Fusion Developer v0.2.4 includes:
+Autodesk Fusion Developer v0.2.5 includes:
 
 - Codex plugin manifest at `plugins/autodesk-fusion/.codex-plugin/plugin.json`.
-- Bundled MCP profiles for Autodesk Product Help, Fusion Desktop MCP, and Fusion Data MCP at `plugins/autodesk-fusion/.mcp.json`.
-- Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP enabled by default.
-- MCP tool approval set to `approve` by default where the bundled config supports it.
-- Focused skills for Fusion API research, add-in scaffolding, live MCP operations, parametric modeling, APS/MFGDM, Automation API, Insider compatibility, read-only Electronics analysis, testing, and security review.
-- Official-source reference links for Autodesk Fusion API, Fusion MCP, APS, OpenAI Codex plugin/MCP capabilities, and MCP security guidance.
-- High-autonomy workflow rules: act inside the user's stated task scope, verify results, and avoid repeated confirmation prompts.
+- Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP enabled by default in `plugins/autodesk-fusion/.mcp.json`.
+- Runtime doctor tooling for Fusion Desktop MCP, Fusion Data MCP, local environment, and source status.
+- Evidence ledger scripts for autonomous runs.
+- Official Fusion API reference RAG guidance and local indexing/search helpers.
+- Computer Use guidance for Fusion UI, dialogs, palettes, and appshots.
+- Optional hook examples and Codex subagent prompts for large tasks.
+- Expanded 2026 skills for Python 3.14, Design Intent, BOM/properties, assembly references, source watching, and large assemblies.
 
 ## Install this marketplace in Codex
 
@@ -84,6 +85,8 @@ Keep all marketplace manifests synchronized.
 │   └── autodesk-fusion/
 │       ├── .codex-plugin/plugin.json
 │       ├── .mcp.json
+│       ├── .codex/agents/
+│       ├── hooks/
 │       ├── skills/
 │       ├── references/
 │       ├── examples/
