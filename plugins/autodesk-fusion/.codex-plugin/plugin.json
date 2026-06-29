@@ -1,6 +1,6 @@
 {
   "name": "autodesk-fusion",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "High-autonomy Autodesk Fusion Codex plugin with Fusion Desktop MCP, Product Help MCP, direct Fusion Data MCP, and a local Fusion Data Auth Bridge for APS/Data Management and MFGDM-style read-only fallback workflows.",
   "author": {
     "name": "Axel Engdahl",
@@ -39,8 +39,8 @@
       "Use the evidence ledger and official-source references when implementing or debugging Fusion cloud data workflows."
     ],
     "brandColor": "#2D6B9F",
-    "composerIcon": "./assets/icon.svg",
-    "logo": "./assets/logo.svg",
-    "screenshots": ["./assets/screenshot-marketplace.svg"]
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": ["./assets/screenshot-marketplace.png"]
   }
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.7
+
+- Updated Autodesk Fusion Developer plugin visuals to use the new Fusion + Codex arrow PNG icon set.
+- Added PNG icon, logo, 128px/256px variants, and marketplace screenshot asset.
+- Updated plugin manifest to point `composerIcon`, `logo`, and `screenshots` to PNG assets for better Codex UI compatibility.
+
 ## 0.2.6
 
 - Added `autodesk-fusion-data-bridge`, a local stdio MCP bridge for Codex-compatible Autodesk OAuth and read-only Fusion cloud data workflows.
