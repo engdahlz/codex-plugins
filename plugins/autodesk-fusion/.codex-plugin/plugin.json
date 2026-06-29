@@ -1,7 +1,7 @@
 {
   "name": "autodesk-fusion",
-  "version": "0.2.5",
-  "description": "High-autonomy, evidence-driven Codex plugin for Autodesk Fusion API development, Fusion Desktop MCP, Product Help MCP, Fusion Data MCP, APS Automation, runtime doctor checks, API-reference RAG, evidence ledgers, Insider compatibility, and CAD automation workflows.",
+  "version": "0.2.6",
+  "description": "High-autonomy Autodesk Fusion Codex plugin with Fusion Desktop MCP, Product Help MCP, direct Fusion Data MCP, and a local Fusion Data Auth Bridge for APS/Data Management and MFGDM-style read-only fallback workflows.",
   "author": {
     "name": "Axel Engdahl",
     "url": "https://github.com/engdahlz"
@@ -13,36 +13,30 @@
     "autodesk",
     "fusion",
     "cad",
-    "cam",
     "mcp",
     "aps",
-    "python",
-    "addin",
-    "automation",
+    "oauth",
+    "pkce",
     "mfgdm",
-    "pmi",
-    "insider",
-    "electronics",
-    "autonomous",
-    "runtime-doctor",
-    "api-rag",
-    "evidence-ledger"
+    "fusion-data",
+    "data-management",
+    "auth-bridge"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Autodesk Fusion Developer",
-    "shortDescription": "Autonomous, evidence-driven Fusion API, MCP, APS, and CAD workflows.",
-    "longDescription": "Use Codex as a high-autonomy Autodesk Fusion developer with runtime doctor checks, official Fusion API reference retrieval, live Desktop MCP operation, Fusion Data MCP/MFGDM workflows, evidence ledgers, Computer Use UI guidance, optional hooks, subagents, and verification-first CAD automation.",
+    "shortDescription": "Fusion API, MCP, APS, and Fusion Data Auth Bridge workflows.",
+    "longDescription": "Use Codex as a high-autonomy Autodesk Fusion developer with Product Help MCP, Desktop MCP, direct Fusion Data MCP, and a local stdio Fusion Data Auth Bridge for Codex-compatible Autodesk OAuth, APS Data Management reads, and MFGDM-oriented fallback workflows.",
     "developerName": "Axel Engdahl",
     "category": "Productivity",
     "capabilities": ["Read", "Write", "Run"],
     "websiteURL": "https://github.com/engdahlz/codex-plugins",
     "defaultPrompt": [
-      "Use Autodesk Fusion Developer autonomously: run the Fusion runtime doctor, research official sources, implement the requested change, and record evidence.",
-      "Use Autodesk Fusion Developer to inspect the active Fusion design through MCP, execute changes within my requested scope, and verify the result with an evidence ledger.",
-      "Use Autodesk Fusion Developer to query the local Fusion API reference before writing API code, then test and summarize exact sources used.",
-      "Use Autodesk Fusion Developer with subagents for API research, implementation, runtime verification, and release audit when the task is large."
+      "Use Autodesk Fusion Developer autonomously. If direct Fusion Data MCP auth fails, use the local Fusion Data Auth Bridge and report any OAuth blocker clearly.",
+      "Use the Fusion Data Auth Bridge doctor and auth_status tools before cloud data reads.",
+      "Use APS/Data Management read-only tools for hubs, projects, folders, items, and versions; do not mutate cloud data.",
+      "Use the evidence ledger and official-source references when implementing or debugging Fusion cloud data workflows."
     ],
     "brandColor": "#2D6B9F",
     "composerIcon": "./assets/icon.svg",

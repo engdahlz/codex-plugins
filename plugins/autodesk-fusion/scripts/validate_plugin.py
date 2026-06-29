@@ -6,11 +6,19 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 PLUGIN = ROOT / "plugins" / "autodesk-fusion"
+BRIDGE = PLUGIN / "mcp" / "fusion-data-auth-bridge"
 
 required = [
     PLUGIN / ".codex-plugin" / "plugin.json",
     PLUGIN / ".mcp.json",
     PLUGIN / "skills",
+    BRIDGE / "server.py",
+    BRIDGE / "auth.py",
+    BRIDGE / "token_store.py",
+    BRIDGE / "aps_client.py",
+    BRIDGE / "mfgdm_client.py",
+    BRIDGE / "schemas.py",
+    BRIDGE / "config.example.json",
     ROOT / ".agents" / "plugins" / "marketplace.json",
     ROOT / ".codex-plugin" / "marketplace.json",
     ROOT / ".claude-plugin" / "marketplace.json",
@@ -27,24 +35,31 @@ canonical = json.loads((ROOT / ".agents" / "plugins" / "marketplace.json").read_
 
 if plugin["name"] != "autodesk-fusion":
     raise SystemExit("Unexpected plugin name")
-if "mcp_servers" not in mcp:
-    raise SystemExit(".mcp.json must contain mcp_servers")
-for name, server in mcp["mcp_servers"].items():
-    if not server.get("enabled"):
-        raise SystemExit(f"Expected high-autonomy MCP server enabled: {name}")
+if plugin.get("version") != "0.2.6":
+    raise SystemExit("Expected plugin version 0.2.6")
+servers = mcp.get("mcp_servers", {})
+for name in ["autodesk-product-help", "autodesk-fusion-desktop", "autodesk-fusion-data", "autodesk-fusion-data-bridge"]:
+    if name not in servers:
+        raise SystemExit(f"Missing MCP server: {name}")
+    if not servers[name].get("enabled"):
+        raise SystemExit(f"Expected MCP server enabled: {name}")
 if "autodesk-fusion" not in [entry["name"] for entry in canonical["plugins"]]:
     raise SystemExit("autodesk-fusion missing from canonical marketplace")
 
 skill_files = sorted((PLUGIN / "skills").glob("*/SKILL.md"))
-if len(skill_files) < 35:
-    raise SystemExit("Too few Fusion skills found")
+skill_names = [path.parent.name for path in skill_files]
+if "fusion-data-auth-bridge" not in skill_names:
+    raise SystemExit("Missing fusion-data-auth-bridge skill")
 for skill in skill_files:
     text = skill.read_text()
     if not text.startswith("---") or "name:" not in text or "description:" not in text:
         raise SystemExit(f"Invalid skill frontmatter: {skill}")
 
-for forbidden in [".fusion-private", ".fusion-runs", ".fusion-api-reference"]:
-    if (ROOT / forbidden).exists():
-        raise SystemExit(f"Private/generated folder must not be committed: {forbidden}")
+ignore = (ROOT / ".gitignore").read_text()
+for forbidden in [".fusion-auth/", ".fusion-private/", ".fusion-runs/", ".fusion-api-reference/"]:
+    if forbidden not in ignore:
+        raise SystemExit(f".gitignore missing {forbidden}")
+    if (ROOT / forbidden.rstrip("/")).exists():
+        raise SystemExit(f"Generated/private folder must not be committed: {forbidden}")
 
-print(f"OK: Autodesk Fusion v{plugin['version']} with {len(skill_files)} skills validated")
+print(f"OK: Autodesk Fusion v{plugin['version']} with {len(skill_files)} skills and Fusion Data Auth Bridge validated")
