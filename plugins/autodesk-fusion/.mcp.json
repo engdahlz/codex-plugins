@@ -23,6 +23,18 @@
       "startup_timeout_sec": 30,
       "tool_timeout_sec": 180,
       "default_tools_approval_mode": "approve"
+    },
+    "autodesk-fusion-data-bridge": {
+      "command": "python3",
+      "args": ["./plugins/autodesk-fusion/mcp/fusion-data-auth-bridge/server.py"],
+      "enabled": true,
+      "required": false,
+      "startup_timeout_sec": 30,
+      "tool_timeout_sec": 180,
+      "default_tools_approval_mode": "approve",
+      "env": {
+        "AUTODESK_FUSION_DATA_BRIDGE_CONFIG": "./plugins/autodesk-fusion/mcp/fusion-data-auth-bridge/config.example.json"
+      }
     }
   }
 }

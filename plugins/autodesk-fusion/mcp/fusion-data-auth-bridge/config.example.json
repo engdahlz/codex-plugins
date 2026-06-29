@@ -1,0 +1,13 @@
+{
+  "client_id_env": "AUTODESK_CLIENT_ID",
+  "callback_port_env": "AUTODESK_CALLBACK_PORT",
+  "callback_port_default": 59595,
+  "redirect_path": "/callback",
+  "auth_url": "https://developer.api.autodesk.com/authentication/v2/authorize",
+  "token_url": "https://developer.api.autodesk.com/authentication/v2/token",
+  "api_base_url": "https://developer.api.autodesk.com",
+  "scopes": ["data:read", "account:read"],
+  "token_store_dir": ".fusion-auth",
+  "mfgdm_graphql_url": "",
+  "request_timeout_sec": 20
+}

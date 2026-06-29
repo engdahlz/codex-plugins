@@ -7,6 +7,7 @@ Use the most specific skill for the task. For broad tasks, start with `fusion-co
 | `fusion-codex-runtime` | Runtime selection across desktop API, MCP, APS, browser UI, and repository-only work. |
 | `fusion-runtime-doctor` | Checking Fusion MCP availability, OAuth/runtime blockers, tool discovery, and local readiness. |
 | `fusion-evidence-ledger` | Recording source evidence, runtime evidence, actions, verification, warnings, and blocked steps. |
+| `fusion-data-auth-bridge` | Local stdio bridge for Fusion Data MCP auth gaps, APS Data Management reads, and verified MFGDM fallback. |
 | `fusion-official-research` | Source-first Autodesk/OpenAI/MCP research. |
 | `fusion-live-mcp` | Live Fusion Desktop MCP inspection and autonomous in-scope operation. |
 | `fusion-addin-scaffold` | Python add-in structure, manifest, commands, handlers, cleanup, and deployment. |
@@ -30,7 +31,7 @@ Use the most specific skill for the task. For broad tasks, start with `fusion-co
 | `fusion-test-debug` | Testing, diagnostics, Fusion runtime debugging, and reproducible failures. |
 | `fusion-visual-verification` | Screenshot, viewport, palette, and appshot verification. |
 | `fusion-security-approvals` | High-autonomy policy, MCP trust, secrets, hooks, and destructive-action risk. |
-| `fusion-cloud-data-mfgdm` | Fusion Data MCP, MFGDM, hub/project/item/version data, and cloud metadata. |
+| `fusion-cloud-data-mfgdm` | Fusion Data MCP, bridge, MFGDM, hub/project/item/version data, and cloud metadata. |
 | `fusion-automation-api` | APS Design Automation / Automation API jobs for Fusion. |
 | `fusion-operations-api` | Fusion Operations production/shop-floor integrations. |
 | `fusion-aps-viewer-companion` | APS Viewer and browser companion UI workflows. |

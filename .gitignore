@@ -9,6 +9,12 @@
 *.p12
 *.pfx
 
+# Autodesk/Fusion local auth and generated runtime state
+.fusion-auth/
+.fusion-private/
+.fusion-runs/
+.fusion-api-reference/
+
 # Logs and temporary files
 *.log
 .tmp/

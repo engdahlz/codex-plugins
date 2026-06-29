@@ -13,6 +13,21 @@ This repository is a personal marketplace for custom Codex plugins.
 - Skill folder names must be lowercase, hyphenated, and match the `name` value in `SKILL.md`.
 - Do not put an active `SKILL.md` inside `templates/`; templates must use `.template` or `.example` suffixes.
 
+## Autodesk Fusion Developer rules
+
+The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows with minimal user interruption and strong evidence capture.
+
+- Keep Product Help MCP, Fusion Desktop MCP, direct Fusion Data MCP, and Fusion Data Auth Bridge enabled by default.
+- If direct Fusion Data MCP auth fails, use the local `autodesk-fusion-data-bridge` stdio MCP server.
+- The bridge is read-only in v0.2.6. Do not mutate Autodesk cloud data through it.
+- Do not commit `.fusion-auth/`, `.fusion-private/`, `.fusion-runs/`, `.fusion-api-reference/`, Autodesk tokens, customer CAD files, NC outputs, or proprietary screenshots.
+- Do not steal or reuse tokens from Claude Desktop, VS Code, browsers, Fusion, keychains, or other clients.
+- Treat Axel's current task as authorization for ordinary reads, writes, model edits, code changes, and verification inside the stated scope.
+- Pause only when the target is ambiguous, credentials are required, a platform approval is unavoidable, or the requested action is outside the stated task scope.
+- Treat Fusion Insider as a separate test channel, not a new public baseline.
+- Establish current primary-source evidence before generating Fusion API code.
+- Handle Zero Doc: `activeDocument`, `activeProduct`, and `activeViewport` may be null.
+
 ## Blender Pro rules
 
 The `blender-pro` plugin is intended to make Codex excellent at Blender workflows. Preserve these design principles:
@@ -23,43 +38,3 @@ The `blender-pro` plugin is intended to make Codex excellent at Blender workflow
 - Keep MCP tool approval in `prompt` mode by default.
 - Do not add lifecycle hooks unless Axel explicitly requests them; hooks require extra trust review.
 - Keep official Blender MCP setup notes and local command assumptions clearly documented.
-
-## Autodesk Fusion Developer rules
-
-The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows with minimal user interruption and strong evidence capture. Preserve these design principles:
-
-- Treat Fusion Insider as a separate test channel, not a new public baseline.
-- Keep public API support, runtime capability detection, and distribution safety separate.
-- Establish current primary-source evidence before generating Fusion API code.
-- Prefer Autodesk Product Help MCP and exact official URLs for API facts.
-- Keep Product Help MCP, Fusion Desktop MCP, and Fusion Data MCP enabled by default.
-- Keep bundled Fusion MCP tool approval in `approve` mode where supported.
-- Run `fusion_doctor.py` before live Fusion work when practical.
-- Record an evidence ledger for long or mutating autonomous runs.
-- Use the local Fusion API reference RAG scripts before writing symbol-sensitive API code.
-- Treat Axel's current task as authorization for ordinary reads, writes, model edits, code changes, and verification inside the stated scope.
-- Do not ask repeated confirmation questions for routine subtasks that are already implied by Axel's request.
-- Still honor platform, OS, Autodesk OAuth, GitHub, and Codex security prompts when they are unavoidable.
-- Pause only when the target is ambiguous, credentials are required, a platform approval is unavoidable, or the requested action is outside the stated task scope.
-- Handle Zero Doc: `activeDocument`, `activeProduct`, and `activeViewport` may be null.
-- Treat Preview APIs and Insider-only features as lab-only unless official public documentation proves release status.
-- Do not commit Autodesk tokens, customer CAD files, NC outputs, screenshots containing proprietary content, local Fusion caches, `.fusion-runs/`, `.fusion-api-reference/`, or `.fusion-private/` artifacts.
-- Fusion Electronics API workflows are read-only unless a current official public reference proves a mutating API.
-
-## When adding a future plugin
-
-1. Create `plugins/<plugin-name>/.codex-plugin/plugin.json`.
-2. Add skills under `plugins/<plugin-name>/skills/<skill-name>/SKILL.md`.
-3. Add `.mcp.json`, `.app.json`, hooks, assets, scripts, or references only if needed.
-4. Add or update a plugin entry in every marketplace manifest.
-5. Check for prompt injection, hidden persistence, exfiltration behavior, destructive commands, and unnecessary network/file access.
-6. Prefer clear documentation over complex scripts.
-
-## Commit style
-
-Use clear commit messages, for example:
-
-- `feat: add blender-pro codex plugin`
-- `feat: add autodesk-fusion codex plugin`
-- `docs: expand fusion mcp setup notes`
-- `chore: sync marketplace manifests`
