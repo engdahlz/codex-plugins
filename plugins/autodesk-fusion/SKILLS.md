@@ -1,4 +1,4 @@
-# Autodesk Fusion Developer skills
+# Fusion Developer skills
 
 Use the most specific skill for the task. For broad tasks, start with `fusion-codex-runtime` and let it route.
 
