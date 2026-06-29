@@ -15,6 +15,11 @@ plugins/autodesk-fusion/CHANGELOG.md
 plugins/autodesk-fusion/assets/icon.svg
 plugins/autodesk-fusion/assets/logo.svg
 plugins/autodesk-fusion/assets/screenshot-marketplace.svg
+plugins/autodesk-fusion/assets/icon.png
+plugins/autodesk-fusion/assets/logo.png
+plugins/autodesk-fusion/assets/icon-256.png
+plugins/autodesk-fusion/assets/icon-128.png
+plugins/autodesk-fusion/assets/screenshot-marketplace.png
 plugins/autodesk-fusion/examples/prompts.md
 plugins/autodesk-fusion/references/official-sources.md
 plugins/autodesk-fusion/references/insider-compatibility.md
