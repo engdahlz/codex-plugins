@@ -1,0 +1,21 @@
+{
+  "name": "reality-composer-pro",
+  "version": "0.1.0",
+  "description": "Codex plugin for Apple Reality Composer Pro, RealityKit, visionOS spatial-content workflows, USD assets, and RCP editor-extension development.",
+  "author": {"name": "Axel Engdahl", "url": "https://github.com/engdahlz"},
+  "license": "Proprietary",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Reality Composer Pro Expert",
+    "shortDescription": "Reality Composer Pro, RealityKit, visionOS, USD assets, and editor-plugin workflows.",
+    "longDescription": "Use Codex as a high-autonomy Apple Reality Composer Pro expert with skills, local MCP tools, official-reference lookup, project inspection, asset auditing, Swift/RealityKit scaffolding, custom RCP editor-plugin guidance, and safe implementation planning for visionOS and iOS spatial content.",
+    "developerName": "Axel Engdahl",
+    "category": "Design",
+    "capabilities": ["Read", "Write", "Run"],
+    "websiteURL": "https://github.com/engdahlz/codex-plugins",
+    "brandColor": "#6E56CF",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg",
+    "screenshots": ["./assets/screenshot-marketplace.svg"]
+  }
+}

@@ -3,32 +3,11 @@
   "interface": {
     "displayName": "Engdahlz Codex Plugins",
     "shortDescription": "Personal Codex plugin marketplace for custom expert workflows.",
-    "longDescription": "A curated personal marketplace of custom Codex plugins. Includes Blender Pro for Blender workflows and Fusion Developer for Fusion API, MCP, APS, Insider compatibility, and CAD automation workflows."
+    "longDescription": "A curated personal marketplace of custom Codex plugins. Includes Blender Pro, Fusion Developer, and Reality Composer Pro Expert for Apple spatial content, RealityKit, visionOS, USD assets, and RCP editor-extension workflows."
   },
   "plugins": [
-    {
-      "name": "blender-pro",
-      "source": {
-        "source": "local",
-        "path": "./plugins/blender-pro"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Design"
-    },
-    {
-      "name": "autodesk-fusion",
-      "source": {
-        "source": "local",
-        "path": "./plugins/autodesk-fusion"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    }
+    {"name": "blender-pro", "source": {"source": "local", "path": "./plugins/blender-pro"}, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": "Design"},
+    {"name": "autodesk-fusion", "source": {"source": "local", "path": "./plugins/autodesk-fusion"}, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": "Productivity"},
+    {"name": "reality-composer-pro", "source": {"source": "local", "path": "./plugins/reality-composer-pro"}, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": "Design"}
   ]
 }
