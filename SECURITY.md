@@ -14,6 +14,8 @@ Agent Skills and Codex plugins can influence how an AI agent reads files, runs t
 
 The bridge performs its own Autodesk OAuth flow and stores tokens only under `.fusion-auth/` by default. It must not read tokens from Claude Desktop, VS Code, browsers, Autodesk apps, keychains owned by other clients, or unrelated config files.
 
-v0.2.6 bridge tools are read-only for Autodesk cloud data. They may read hubs, projects, folders, items, versions, and verified MFGDM data. They must not mutate cloud data.
+v0.2.10 bridge cloud-data tools are read-only. They may read hubs, projects, folders, items, versions, and verified MFGDM data. They must not mutate Autodesk cloud data.
+
+The bridge must validate OAuth state, expire pending login state, redact sensitive output fields, and keep local generated auth state out of Git.
 
 External approvals, Autodesk OAuth, macOS permissions, GitHub permissions, and Codex platform controls must be honored. The plugin must not attempt to bypass them.
