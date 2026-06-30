@@ -1,7 +1,7 @@
 {
   "name": "autodesk-fusion",
-  "version": "0.2.9",
-  "description": "High-autonomy Autodesk Fusion Codex plugin with Fusion Desktop MCP, Product Help MCP, direct Fusion Data MCP, and a local Fusion Data Auth Bridge for APS/Data Management and MFGDM-style read-only fallback workflows.",
+  "version": "0.2.10",
+  "description": "High-autonomy Autodesk Fusion Codex plugin with bundled MCP server config, Fusion Desktop MCP, Product Help MCP, direct Fusion Data MCP, and a local Fusion Data Auth Bridge for APS/Data Management and verified MFGDM read-only fallback workflows.",
   "author": {
     "name": "Axel Engdahl",
     "url": "https://github.com/engdahlz"
@@ -26,21 +26,27 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Fusion Developer",
-    "shortDescription": "Fusion API, MCP, APS, and Fusion Data Auth Bridge workflows.",
-    "longDescription": "Use Codex as a high-autonomy Autodesk Fusion developer with Product Help MCP, Desktop MCP, direct Fusion Data MCP, and a local stdio Fusion Data Auth Bridge for Codex-compatible Autodesk OAuth, APS Data Management reads, and MFGDM-oriented fallback workflows.",
+    "shortDescription": "Fusion API, bundled MCP config, APS, and robust Fusion Data Auth Bridge workflows.",
+    "longDescription": "Use Codex as a high-autonomy Autodesk Fusion developer with bundled MCP server configuration, Product Help MCP, Desktop MCP, direct Fusion Data MCP, and a local stdio Fusion Data Auth Bridge for Codex-compatible Autodesk OAuth, APS Data Management reads, and verified MFGDM-oriented fallback workflows.",
     "developerName": "Axel Engdahl",
     "category": "Productivity",
-    "capabilities": ["Read", "Write", "Run"],
+    "capabilities": [
+      "Read",
+      "Write",
+      "Run"
+    ],
     "websiteURL": "https://github.com/engdahlz/codex-plugins",
     "defaultPrompt": [
-      "Use Fusion Developer autonomously. If direct Fusion Data MCP auth fails, use the local Fusion Data Auth Bridge and report any OAuth blocker clearly.",
-      "Use the Fusion Data Auth Bridge doctor and auth_status tools before cloud data reads.",
-      "Use APS/Data Management read-only tools for hubs, projects, folders, items, and versions; do not mutate cloud data.",
-      "Use the evidence ledger and official-source references when implementing or debugging Fusion cloud data workflows."
+      "Use Fusion Developer autonomously with evidence capture. Prefer direct Fusion Data MCP; if auth fails, use the bundled local Fusion Data Auth Bridge.",
+      "Run bridge doctor and auth_status before cloud data reads. Use start_login and complete_login_if_needed with both code and state when OAuth is needed.",
+      "Use APS/Data Management read-only tools for hubs, projects, folders, items, and versions; do not mutate Autodesk cloud data through the bridge.",
+      "Use prompt approval for Desktop/Fusion Data tools unless a user explicitly relaxes policy. Keep generated/private Fusion state out of Git."
     ],
     "brandColor": "#2D6B9F",
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/logo.png",
-    "screenshots": ["./assets/screenshot-marketplace.png"]
+    "screenshots": [
+      "./assets/screenshot-marketplace.png"
+    ]
   }
 }
