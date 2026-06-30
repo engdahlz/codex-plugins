@@ -9,5 +9,14 @@
   "scopes": ["data:read", "account:read"],
   "token_store_dir": ".fusion-auth",
   "mfgdm_graphql_url": "",
-  "request_timeout_sec": 20
+  "mfgdm_schema_version": "",
+  "mfgdm_verified_at": "",
+  "mfgdm_allowed_queries_file": "",
+  "allow_unverified_urls": false,
+  "request_timeout_sec": 20,
+  "retry_attempts": 2,
+  "retry_base_delay_sec": 0.5,
+  "page_limit_default": 50,
+  "page_limit_max": 200,
+  "pending_login_ttl_sec": 600
 }
