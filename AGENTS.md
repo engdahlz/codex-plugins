@@ -7,6 +7,7 @@ This repository is a personal marketplace for custom Codex plugins.
 - Do not create a new plugin or skill unless Axel explicitly asks for it.
 - Do not add secrets, credentials, tokens, cookies, API keys, private personal data, generated auth files, or `.env` files.
 - Keep `.agents/plugins/marketplace.json`, `.claude-plugin/marketplace.json`, `.codex-plugin/marketplace.json`, and `marketplace.json` synchronized.
+- Use `python scripts/sync_marketplaces.py` to check marketplace mirrors and `python scripts/sync_marketplaces.py --write` to regenerate them.
 - Active plugins belong under `plugins/<plugin-name>/`.
 - Every active Codex plugin must include `plugins/<plugin-name>/.codex-plugin/plugin.json`.
 - Bundled plugin skills belong under `plugins/<plugin-name>/skills/<skill-name>/SKILL.md`.
@@ -18,8 +19,9 @@ This repository is a personal marketplace for custom Codex plugins.
 The `autodesk-fusion` plugin is intended to make Codex excellent at Autodesk Fusion API, MCP, APS, and CAD automation workflows with minimal user interruption and strong evidence capture.
 
 - Keep Product Help MCP, Fusion Desktop MCP, direct Fusion Data MCP, and Fusion Data Auth Bridge enabled by default.
+- The bundled bridge MCP command must remain plugin-relative: `./mcp/fusion-data-auth-bridge/server.py`.
 - If direct Fusion Data MCP auth fails, use the local `autodesk-fusion-data-bridge` stdio MCP server.
-- The bridge is read-only in v0.2.6. Do not mutate Autodesk cloud data through it.
+- The bridge is read-only in v0.2.10. Do not mutate Autodesk cloud data through it.
 - Do not commit `.fusion-auth/`, `.fusion-private/`, `.fusion-runs/`, `.fusion-api-reference/`, Autodesk tokens, customer CAD files, NC outputs, or proprietary screenshots.
 - Do not steal or reuse tokens from Claude Desktop, VS Code, browsers, Fusion, keychains, or other clients.
 - Treat Axel's current task as authorization for ordinary reads, writes, model edits, code changes, and verification inside the stated scope.
