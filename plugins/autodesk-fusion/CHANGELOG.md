@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.10
+
+- Fixed the bundled Fusion Data Auth Bridge MCP launch path so it is plugin-relative after installation.
+- Added `VERSION` as the Fusion plugin version source and updated the plugin manifest to `0.2.10`.
+- Hardened local bridge config resolution for plugin-root/plugin-data installation layouts.
+- Hardened local bridge token storage with private permissions, atomic writes, corrupt-store handling, and deeper redaction.
+- Required OAuth state validation and pending-login expiry for local bridge sign-in completion.
+- Avoid returning an expired access token when refresh fails.
+- Added richer bridge config fields for pending-login TTL, pagination limits, retry defaults, URL verification, and verified MFGDM configuration.
+- Synced root marketplace metadata with the canonical marketplace and added `scripts/sync_marketplaces.py`.
+- Strengthened `scripts/validate_plugin.py` and bridge offline tests.
+
 ## 0.2.9
 
 - Renamed the plugin display name from `Autodesk Fusion Developer` to `Fusion Developer`.

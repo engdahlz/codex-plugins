@@ -5,35 +5,34 @@
       "enabled": true,
       "required": false,
       "startup_timeout_sec": 20,
-      "tool_timeout_sec": 90,
-      "default_tools_approval_mode": "approve"
+      "tool_timeout_sec": 90
     },
     "autodesk-fusion-desktop": {
       "url": "http://127.0.0.1:27182/mcp",
       "enabled": true,
       "required": false,
       "startup_timeout_sec": 10,
-      "tool_timeout_sec": 180,
-      "default_tools_approval_mode": "approve"
+      "tool_timeout_sec": 180
     },
     "autodesk-fusion-data": {
       "url": "https://developer.api.autodesk.com/fusion/mcp",
       "enabled": true,
       "required": false,
       "startup_timeout_sec": 30,
-      "tool_timeout_sec": 180,
-      "default_tools_approval_mode": "approve"
+      "tool_timeout_sec": 180
     },
     "autodesk-fusion-data-bridge": {
       "command": "python3",
-      "args": ["./plugins/autodesk-fusion/mcp/fusion-data-auth-bridge/server.py"],
+      "args": ["./mcp/fusion-data-auth-bridge/server.py"],
+      "cwd": ".",
       "enabled": true,
       "required": false,
       "startup_timeout_sec": 30,
       "tool_timeout_sec": 180,
-      "default_tools_approval_mode": "approve",
+      "enabled_tools": ["doctor", "auth_status", "start_login", "complete_login_if_needed", "logout_local", "list_hubs", "list_projects", "list_top_folders", "list_folder_contents", "get_item_versions", "get_version_metadata", "get_mfgdm_design_summary", "get_mfgdm_component_hierarchy"],
+      "env_vars": ["AUTODESK_CLIENT_ID", "AUTODESK_CALLBACK_PORT"],
       "env": {
-        "AUTODESK_FUSION_DATA_BRIDGE_CONFIG": "./plugins/autodesk-fusion/mcp/fusion-data-auth-bridge/config.example.json"
+        "AUTODESK_FUSION_DATA_BRIDGE_CONFIG": "./mcp/fusion-data-auth-bridge/config.example.json"
       }
     }
   }
