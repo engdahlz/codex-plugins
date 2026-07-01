@@ -1,6 +1,6 @@
 {
   "name": "reality-composer-pro",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Expert Reality Composer Pro, RealityKit, visionOS, USD asset-pipeline, and editor-extension workflow plugin for Codex.",
   "author": {"name": "Axel Engdahl", "url": "https://github.com/engdahlz"},
   "license": "Proprietary",
