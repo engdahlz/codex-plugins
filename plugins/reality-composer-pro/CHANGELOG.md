@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- Updated RealityComposerPro icon/logo artwork to match the supplied cube-and-cursor mark.
+
 ## 0.2.0
 
 - Renamed the user-facing plugin display name to `RealityComposerPro`.
