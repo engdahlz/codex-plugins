@@ -1,24 +1,22 @@
-# Reality Composer Pro Expert
+# RealityComposerPro
 
-Reality Composer Pro Expert is a Codex plugin for Apple Reality Composer Pro, RealityKit, visionOS, USD asset pipelines, and Reality Composer Pro 3 editor-extension workflows.
+RealityComposerPro is a Codex plugin for Apple Reality Composer Pro, RealityKit, visionOS, USD asset pipelines, and Reality Composer Pro editor-extension workflows.
 
-## Included
+## Highlights
 
-- Focused skills for RCP authoring, Xcode integration, USD assets, materials, Script Graph, animation, custom plugins, performance, and troubleshooting.
-- Local stdio MCP helper for docs search, project inspection, asset audit, Swift scaffolding, checklists, gitignore guidance, and task planning.
-- Official-source reference index for Apple Developer pages, WWDC sessions, and Apple sample/source repositories.
-- Swift examples for RealityKit content loading and custom Reality Composer Pro editor plugin scaffolding.
-
-## MCP tools
-
-```bash
-python3 ${PLUGIN_ROOT}/scripts/rcp_helper.py
-```
-
-Tools: `rcp_doc_search`, `rcp_reference_get`, `rcp_project_doctor`, `rcp_asset_audit`, `rcp_swift_scaffold`, `rcp_generate_checklist`, `rcp_plan_task`, `rcp_gitignore_suggestions`.
+- Skills mapped to the Apple Reality Composer Pro documentation sidebar.
+- Release-note triage workflow for known issues and workarounds.
+- Local stdio MCP helper for docs lookup, project inspection, asset audit, Swift scaffolding, checklists, task planning, and gitignore suggestions.
+- References for Reality Composer Pro, RealityKit, visionOS, WWDC sessions, custom editor plugins, release notes, and Apple-docs MCP candidates.
+- Swift examples for `RealityView` loading and custom component/plugin scaffolding.
 
 ## Validate
 
 ```bash
 python3 plugins/reality-composer-pro/scripts/validate_plugin.py .
+python3 plugins/reality-composer-pro/scripts/rcp_helper.py --self-test
 ```
+
+## Important boundary
+
+The bundled helper is not an Apple-provided remote-control API for the Reality Composer Pro app. It is a local Codex helper for planning, inspection, references, scaffolding, and safe handoff.
