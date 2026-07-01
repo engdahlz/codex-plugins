@@ -2,27 +2,43 @@
 
 Personal GitHub marketplace for custom Codex plugins.
 
-Add this repository URL to Codex, then install plugins from `.agents/plugins/marketplace.json`.
+This repository is a Codex marketplace. Add the repository URL to Codex and install plugins exposed through `.agents/plugins/marketplace.json`.
 
 ## Available plugins
 
 ### Blender Pro
 
-A professional Blender workflow plugin for Codex with Blender MCP setup, scene inspection, modeling, materials, lighting, render workflow, animation, geometry nodes, asset pipelines, Python/bpy workflows, and review skills.
+A professional Blender workflow plugin for Codex.
 
 ### Fusion Developer
 
-An Autodesk Fusion workflow plugin for Fusion API, Product Help MCP, Fusion Desktop MCP, APS/Fusion Data workflows, Insider compatibility, CAD automation, evidence capture, and local bridge fallback workflows.
+An Autodesk Fusion workflow plugin for Fusion API, MCP, APS/Fusion Data workflows, Insider compatibility, CAD automation, evidence capture, and local bridge fallback workflows.
 
-### Reality Composer Pro Expert
+### RealityComposerPro
 
-An Apple Reality Composer Pro and RealityKit workflow plugin for Codex. It includes skills, references, Swift examples, and a local MCP server for Reality Composer Pro 3, visionOS/iOS spatial content, `.realitycomposerpro`, `.rkassets`, USD/USDZ asset hygiene, Xcode integration, RealityView loading, components, systems, actions, Shader Graph, Script Graph, Compute Graph, Animation Graph, Sequencer, Behavior Trees, Navigation Mesh, and custom editor plugins.
+An Apple Reality Composer Pro and RealityKit workflow plugin for Codex.
 
-## Install in Codex
+RealityComposerPro v0.2.1 includes:
+
+- Codex plugin manifest at `plugins/reality-composer-pro/.codex-plugin/plugin.json`.
+- Bundled local MCP helper configuration at `plugins/reality-composer-pro/.mcp.json`.
+- Skills mapped to the Apple Reality Composer Pro documentation sidebar.
+- Release-note workflow for known issues, workarounds, fixed versions, and SDK-specific behavior.
+- Local helper tools for reference search, project doctor, asset audit, Swift scaffolding, workflow checklists, task planning, and gitignore suggestions.
+- Updated cube-and-cursor logo artwork.
+
+## Install this marketplace in Codex
 
 ```bash
 codex plugin marketplace add engdahlz/codex-plugins --ref main
 codex plugin marketplace list
 ```
 
-Then open `/plugins` and install the plugin you want.
+Then restart Codex, open `/plugins`, choose **Engdahlz Codex Plugins**, and install **RealityComposerPro**.
+
+## Development rules
+
+- Do not add plugins unless Axel explicitly requests them.
+- Treat skills and MCP configuration as code.
+- Keep plugin manifests and marketplace entries accurate.
+- Keep skills focused and easy for Codex to select.
