@@ -9,6 +9,7 @@ RealityComposerPro is a Codex plugin for Apple Reality Composer Pro, RealityKit,
 - Local stdio MCP helper for docs lookup, project inspection, asset audit, Swift scaffolding, checklists, task planning, and gitignore suggestions.
 - References for Reality Composer Pro, RealityKit, visionOS, WWDC sessions, custom editor plugins, release notes, and Apple-docs MCP candidates.
 - Swift examples for `RealityView` loading and custom component/plugin scaffolding.
+- Updated cube-and-cursor logo artwork.
 
 ## Validate
 
