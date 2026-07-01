@@ -7,7 +7,6 @@ from pathlib import Path
 
 ASSET_EXTS = {".usd", ".usda", ".usdc", ".usdz", ".reality", ".png", ".jpg", ".jpeg", ".heic", ".exr", ".hdr", ".mp3", ".wav", ".mp4", ".mov", ".obj", ".fbx", ".gltf", ".glb"}
 SKIP_DIRS = {".git", ".build", "DerivedData", "node_modules", ".swiftpm", "__pycache__"}
-
 SIDEBAR = {
     "Essentials": ["Linking an Xcode project", "Configuring the project workspace", "Navigating the Reality Composer Pro workspace", "Adding entities and assets to a scene", "Working with the Graph Editor", "Reusing assets with prototypes and instances"],
     "Materials": ["Building materials in Reality Composer Pro", "Applying materials to an asset", "Designing materials with Shader Graph"],
@@ -15,7 +14,6 @@ SIDEBAR = {
     "Script graph": ["Getting started with script graphs"],
     "Character Intelligence": ["Animation Graph", "Behavior Tree", "Navigation Mesh", "Character interactions"]
 }
-
 RELEASE_SOURCES = [
     ("Reality Composer Pro docs", "https://developer.apple.com/documentation/realitycomposerpro/"),
     ("Apple updates", "https://developer.apple.com/documentation/Updates"),
@@ -25,7 +23,6 @@ RELEASE_SOURCES = [
     ("macOS release notes", "https://developer.apple.com/documentation/macos-release-notes/"),
     ("RealityKit docs", "https://developer.apple.com/documentation/realitykit/")
 ]
-
 MCP_CANDIDATES = ["kimsungwhee/apple-docs-mcp", "MightyDillah/apple-doc-mcp", "BingoWon/apple-rag-mcp", "Ahrentlov/appledeepdoc-mcp"]
 
 
@@ -84,6 +81,10 @@ def mcp_candidates() -> str:
     return "\n".join(out)
 
 
+def mcp_candidate_report() -> str:
+    return mcp_candidates()
+
+
 def iter_files(path: Path):
     for dirpath, dirnames, filenames in os.walk(path):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS and not d.endswith(".xcodeproj") and not d.endswith(".xcworkspace")]
@@ -112,10 +113,8 @@ def inventory(path: str | None = None):
         if p.suffix.lower() in ASSET_EXTS:
             size = p.stat().st_size
             bucket = info["assets"].setdefault(p.suffix.lower(), {"count": 0, "bytes": 0, "examples": []})
-            bucket["count"] += 1
-            bucket["bytes"] += size
-            if len(bucket["examples"]) < 5:
-                bucket["examples"].append(rel)
+            bucket["count"] += 1; bucket["bytes"] += size
+            if len(bucket["examples"]) < 5: bucket["examples"].append(rel)
             largest.append((size, rel))
     info["largest_assets"] = [{"path": rel, "bytes": size} for size, rel in sorted(largest, reverse=True)[:10]]
     return info
@@ -124,8 +123,7 @@ def inventory(path: str | None = None):
 def project_doctor(path: str | None = None) -> str:
     data = inventory(path)
     out = ["# RealityComposerPro project doctor", "", f"Root: `{data['root']}`", f"Exists: `{data['exists']}`", ""]
-    if not data["exists"]:
-        return "\n".join(out + ["Path does not exist."])
+    if not data["exists"]: return "\n".join(out + ["Path does not exist."])
     for title, key in [("Xcode projects", "xcode_projects"), ("Xcode workspaces", "workspaces"), ("RealityKit asset folders", "rkassets"), ("Reality Composer packages", "reality_composer_packages")]:
         out += [f"## {title}", ""] + ([f"- `{v}`" for v in data[key]] or ["- None detected"]) + [""]
     out += ["## Asset summary", ""]
@@ -138,10 +136,10 @@ def asset_audit(path: str | None = None) -> str:
     return json.dumps({"root": data["root"], "assets": data["assets"], "largest_assets": data["largest_assets"]}, indent=2, ensure_ascii=False)
 
 
-def swift_scaffold(kind: str = "RealityView", type_name: str = "Example") -> str:
+def swift_scaffold(kind: str = "RealityView", type_name: str = "Example", module_name: str = "RealityContent") -> str:
     if "component" in (kind or "").lower():
         return f"import RealityKit\n\npublic struct {type_name}Component: Component, Codable {{\n    public var intensity: Float = 1\n}}\n"
-    return f"import SwiftUI\nimport RealityKit\n\nstruct {type_name}RealityView: View {{\n    var body: some View {{\n        RealityView {{ content in\n            // Load Reality Composer Pro content here.\n        }}\n    }}\n}}\n"
+    return f"import SwiftUI\nimport RealityKit\n\nstruct {type_name}RealityView: View {{\n    var body: some View {{\n        RealityView {{ content in\n            // Load Reality Composer Pro content here from {module_name}.\n        }}\n    }}\n}}\n"
 
 
 def checklist(topic: str = "scene") -> str:
@@ -149,11 +147,15 @@ def checklist(topic: str = "scene") -> str:
     return "\n".join([f"# Checklist: {topic}", ""] + [f"- [ ] {item}" for item in items])
 
 
-def plan_task(task: str, target_platform: str = "visionOS") -> str:
-    return "\n".join(["# RealityComposerPro implementation plan", "", f"Task: {task}", f"Target platform: {target_platform}", "", "1. Inspect project and assets.", "2. Search official/bundled references.", "3. Check release notes for known issues and workarounds.", "4. Decide what is RCP-editor work versus Swift/RealityKit code.", "5. Implement small reversible changes.", "6. Validate and record manual editor steps."])
+def generate_checklist(workflow: str = "scene", target: str = "Reality Composer Pro scene") -> str:
+    return checklist(f"{workflow} for {target}")
 
 
-def gitignore_suggestions() -> str:
+def plan_task(task: str, target_platform: str = "visionOS", autonomy: str = "high") -> str:
+    return "\n".join(["# RealityComposerPro implementation plan", "", f"Task: {task}", f"Target platform: {target_platform}", f"Autonomy: {autonomy}", "", "1. Inspect project and assets.", "2. Search official/bundled references.", "3. Check release notes for known issues and workarounds.", "4. Decide what is RCP-editor work versus Swift/RealityKit code.", "5. Implement small reversible changes.", "6. Validate and record manual editor steps."])
+
+
+def gitignore_suggestions(root_path: str | None = None) -> str:
     return """# Suggested RealityComposerPro git hygiene
 .DS_Store
 *.xcuserstate
