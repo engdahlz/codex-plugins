@@ -6,7 +6,7 @@
   "license": "Proprietary",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Reality Composer Pro Expert",
+    "displayName": "RealityComposerPro",
     "shortDescription": "Reality Composer Pro, RealityKit, visionOS, USD assets, and editor-plugin workflows.",
     "longDescription": "Use Codex as a high-autonomy Apple Reality Composer Pro expert with skills, local MCP tools, official-reference lookup, project inspection, asset auditing, Swift/RealityKit scaffolding, custom RCP editor-plugin guidance, and safe implementation planning for visionOS and iOS spatial content.",
     "developerName": "Axel Engdahl",
