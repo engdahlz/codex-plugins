@@ -1,6 +1,14 @@
 # RealityComposerPro logo source
 
-The plugin icon and logo are based on Axel's supplied cube-and-cursor mark: a white rounded app tile, soft white cube, blue-violet platform strokes, blue-violet top face, and large white cursor pointer.
+The plugin icon and logo are based on Axel's supplied cube-and-cursor mark.
+
+Visual details:
+
+- white rounded app tile
+- soft white cube
+- blue-violet platform strokes
+- blue-violet top face
+- large white cursor pointer
 
 Canonical files:
 
