@@ -1,0 +1,9 @@
+DerivedData/
+.build/
+.swiftpm/
+*.xcuserstate
+*.xcuserdata/
+.DS_Store
+*.tmp
+*.reality
+*.trace
